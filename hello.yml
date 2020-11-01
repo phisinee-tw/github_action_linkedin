@@ -1,0 +1,17 @@
+name: hello # name of workflow (Not require)
+
+on: [push] # github event on workflow (Require) as example as push, pull_request and release if multiple event using [push, pull_request]
+
+jobs:
+  build: # job name (This file is single job)
+
+    runs-on: ubuntu-latest # Type of machine to run job
+
+    steps:
+    - uses: actions/checkout@v1 # Docker image for action in public github repo
+    - name: Run a one-line script
+      run: echo Hello, world!
+    - name: Run a multi-line script
+      run: |
+        echo Add other actions to build,
+        echo test, and deploy your project.
